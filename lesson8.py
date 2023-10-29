@@ -54,13 +54,29 @@ new_list = list[str](filter(lambda x: x == x[::-1], list1))
 print(new_list)
 
 print('======================== 10 ==========================')
-# list1 = ['bingo', 'integer', 'account']
-# new_list = list[str](sorted(list1, key=lambda x: sum(x)))
-# print(new_list)
+list1 = ['bingo', 'integer', 'account']
+new_list = sorted(list1, key=lambda x: sum(c in vowels for c in x))
+print(new_list)
 
 print('======================== 11 ==========================')
-# list1 = ['binib', 'integer', 'accocca']
-# new_list = list(map(lambda x: x.upper, list1))
-# print(new_list)
+list1 = ['binib', 'integer', 'accocca']
+new_list = list(map(str.upper, list1))
+print(new_list)
 
 print('======================== 12 ==========================')
+list1 = ['binib', 'integer', 'accocca']
+greet = 'Hello '
+new_list = list(map(lambda x: greet + x, list1))
+print(new_list)
+
+print('======================== 13 ==========================')
+list1 = ['biniba', 'integer', 'accocca']
+a = 'a'
+new_list = list[str](sorted(list1, key=lambda x: sum(c in 'a' for c in x)))
+print(new_list)
+
+print('======================== 14 ==========================')
+list1 = ['жаль(((', 'ура!?', 'привет!']
+symbols = {'(', ')', '+', '-', '?', '!', '+', '_', '%', '#'}
+new_list = list(sorted(list1, key=lambda x: sum(c in symbols for c in x)))
+print(new_list)

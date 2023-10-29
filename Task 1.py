@@ -54,9 +54,9 @@ new_list = list[str](filter(lambda x: x == x[::-1], list1))
 print(new_list)
 
 print('======================== 10 ==========================')
-# list1 = ['bingo', 'integer', 'account']
-# new_list = list[str](sorted(list1, key=lambda x: sum(x)))
-# print(new_list)
+list1 = ['bingo', 'integer', 'account']
+new_list = sorted(list1, key=lambda c, x: sum(for c in vowels))
+print(new_list)
 
 print('======================== 11 ==========================')
 # list1 = ['binib', 'integer', 'accocca']
