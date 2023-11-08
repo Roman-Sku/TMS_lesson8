@@ -18,6 +18,8 @@ soda2 = Soda('cola')
 print(soda2.show_my_drink())
 
 # ================================ 2 =================================
+
+
 class TriangleChecker:
     def __init__(self, a, b, c):
         self.a = a
@@ -143,10 +145,6 @@ class Person:
         s = 'name-age-geneder'
         values = s.split('-')
         return values[0], values[1], [2]
-
-
-example1 = Person('ваня-13-мужской')
-print(example1.create_from_string())
 
 
 
