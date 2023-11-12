@@ -36,7 +36,7 @@ class AbstractShop(ABC):
         """Выводит перечен всех товаров"""
 
 
-class Error(ValueError):
+class NonProductError(ValueError):
     pass
 
 
@@ -45,9 +45,11 @@ class RealShop(AbstractShop):
         self.list: list = []
 
     def add_product(self, product: Product):
+        self.checker(product)
         self.list.append(product)
 
     def sell_product(self, product: Product):
+        self.checker(product)
         self.list.remove(product)
 
     def all_products(self):
@@ -56,7 +58,7 @@ class RealShop(AbstractShop):
     @staticmethod
     def checker(product: Product):
         if not isinstance(product, Product):
-            raise Error('NonProductError')
+            raise NonProductError('Не является продуктом')
 
 
 shop = RealShop()
@@ -109,16 +111,18 @@ class FurnitureShop(AbstractShop):
     def __init__(self):
         self.list: list = []
 
-    def add_product(self, product: Furniture):
-        self.list.append(product)
+    def add_product(self, furniture: Furniture):
+        self.checker(furniture)
+        self.list.append(furniture)
 
-    def sell_product(self, product: Furniture):
-        self.list.remove(product)
+    def sell_product(self, furniture: Furniture):
+        self.checker(furniture)
+        self.list.remove(furniture)
 
     def all_products(self):
         return self.list
 
     @staticmethod
-    def checker(product: Furniture):
-        if not isinstance(product, Furniture):
-            raise Error('NonProductError')
+    def checker(furniture: Furniture):
+        if not isinstance(furniture, Furniture):
+            raise NonProductError('Не является продуктом')
