@@ -78,8 +78,6 @@ print(shop.all_products())
 shop.sell_product(c)
 print(shop.all_products())
 
-furniture_shop = RealShop()
-
 
 @dataclass
 class Furniture(Product):
@@ -126,3 +124,9 @@ class FurnitureShop(AbstractShop):
     def checker(furniture: Furniture):
         if not isinstance(furniture, Furniture):
             raise NonProductError('Не является продуктом')
+
+
+furniture_shop = FurnitureShop()
+a = Wardrobe(15, 'утренняя свежесть', 123.01, 40, 2, True)
+furniture_shop.add_product(a)
+print(furniture_shop.all_products())
