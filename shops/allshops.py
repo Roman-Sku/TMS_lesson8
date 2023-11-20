@@ -41,4 +41,4 @@ class PCShop(AbstractShop):
     @staticmethod
     def checker(product: MotherBoard | GPU | CPU | PSU):
         if not isinstance(product, MotherBoard | GPU | CPU | PSU):
-            raise NonProductError('Не является продуктом')
+            raise NonProductError('Не является продуктом!')

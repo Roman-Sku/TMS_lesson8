@@ -20,7 +20,7 @@ class AbstractShop(ABC):
 
     @abstractmethod
     def all_products(self) -> list[Product]:
-        """Выводит перечен всех товаров"""
+        """Выводит перечень всех товаров"""
 
 
 class NonProductError(ValueError):

@@ -4,6 +4,7 @@ from .abstract import Product
 
 @dataclass
 class MotherBoard(Product):
+    chip: str
     pass
 
 
