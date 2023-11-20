@@ -1,5 +1,5 @@
-from abstract import AbstractShop, NonProductError
-from products import *
+from .abstract import AbstractShop, NonProductError
+from .products import *
 
 
 class BooksShop(AbstractShop):
