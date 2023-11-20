@@ -18,8 +18,6 @@ soda2 = Soda('cola')
 print(soda2.show_my_drink())
 
 # ================================ 2 =================================
-
-
 class TriangleChecker:
     def __init__(self, a, b, c):
         self.a = a
