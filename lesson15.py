@@ -12,7 +12,7 @@ class Base(DeclarativeBase):
 
 
 class Seller(Base):
-    __tablename__ = "Seller"
+    __tablename__ = "Sellers"
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     company = Column(String(64), unique=True, nullable=False)
     phone = Column(String(64), unique=True, nullable=False)
@@ -24,7 +24,7 @@ class Products(Base):
     name = Column(String(200), unique=True, nullable=False)
     cost = Column(Integer, unique=False, nullable=False)
     count = Column(Integer, unique=False, nullable=False, default=0)
-    seller_id = Column(Integer, ForeignKey("Seller.id"))
+    seller_id = Column(Integer, ForeignKey("Sellers.id"))
 
 
 class Users(Base):
